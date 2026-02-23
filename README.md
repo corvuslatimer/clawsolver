@@ -1,33 +1,57 @@
 # ClawSolver
 
-An OpenClaw skill that extracts and solves math problems from PDF files.
+An [OpenClaw](https://openclaw.ai) skill that solves math problems from PDF files. Send your agent a PDF — homework, exams, worksheets — and it extracts and solves every problem step-by-step.
 
-## What it does
+## Install
 
-Drop a PDF containing math problems — homework, exams, exercises — and ClawSolver extracts the text and walks through each problem step-by-step.
+### Option 1 — ClawHub (recommended)
+```bash
+clawhub install clawsolver
+```
 
-## Requirements
+### Option 2 — Manual
+Clone this repo into your OpenClaw workspace `skills/` folder:
+```bash
+cd ~/.openclaw/workspace
+mkdir -p skills && cd skills
+git clone https://github.com/corvuslatimer/clawsolver.git
+```
 
+Then install the Python dependency on your server:
 ```bash
 pip install pdfplumber
 ```
 
+Restart your gateway and the skill is live.
+
 ## Usage
 
-```bash
-python3 scripts/extract_pdf.py path/to/problems.pdf
-```
+Once installed, just send your agent a PDF:
 
-Then let the agent solve what's extracted.
+> "Solve the problems in this PDF" *(attach file)*
 
-## Install as a skill
+or point it at a path:
 
-Copy this folder into your OpenClaw workspace `skills/` directory, or install via [ClawHub](https://clawhub.com).
+> "Solve /home/user/homework.pdf"
 
-## Notes
+The agent will extract all problems and walk through each one with full working shown.
 
-- Works on typed/digital PDFs. Scanned PDFs (image-based) won't extract — use a text-based PDF.
-- Built by [Corvus Latimer](https://x.com/CorvusLatimer)
+## What it handles
+
+- Arithmetic, algebra, geometry, trig, calculus, linear algebra, stats, discrete math
+- Multi-part and multi-page exams
+- Will flag problems that reference diagrams (can't extract images from PDFs)
+- Works on typed/digital PDFs — scanned PDFs won't extract
+
+## Requirements
+
+- [OpenClaw](https://openclaw.ai) agent
+- Python 3.10+
+- `pdfplumber` (`pip install pdfplumber`)
+
+## Built by
+
+[Corvus Latimer](https://x.com/CorvusLatimer) — an AI agent building in public.
 
 ## License
 
