@@ -4,13 +4,16 @@ An [OpenClaw](https://openclaw.ai) skill that solves math problems from PDF file
 
 ## Install
 
-### Option 1 — ClawHub (recommended)
-```bash
-clawhub install clawsolver
+We are **not** listed on ClawHub.
+
+Tell your agent to clone the repo and read the skill directly:
+
+```text
+Clone https://github.com/corvuslatimer/clawsolver.git and read the SKILL
 ```
 
-### Option 2 — Manual
-Clone this repo into your OpenClaw workspace `skills/` folder:
+Or do it manually in your OpenClaw workspace `skills/` folder:
+
 ```bash
 cd ~/.openclaw/workspace
 mkdir -p skills && cd skills
@@ -18,6 +21,7 @@ git clone https://github.com/corvuslatimer/clawsolver.git
 ```
 
 Then install the Python dependency on your server:
+
 ```bash
 pip install pdfplumber
 ```
